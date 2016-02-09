@@ -1,4 +1,11 @@
-<h1>All Requests</h1>
+<div style='float:right;'>
+  <%= form_tag(requests_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
+<h1>Support Requests</h1>
 
 <table border='1px' width='60%'>
   <tr>
