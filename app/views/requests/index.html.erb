@@ -1,11 +1,13 @@
 <h1>All Requests</h1>
 
-<table border='1px'>
+<table border='1px' width='60%'>
   <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Department</th>
     <th>Message</th>
+    <th>Actions</th>
+
   </tr>
 
   <% @requests.each do |request|  %>
@@ -14,6 +16,7 @@
     <td><%= request.email %></td>
     <td><%= request.department %></td>
     <td><%= request.message %></td>
+    <td><%= link_to 'Edit', edit_request_path(request) %></td>
   </tr>
   <% end %>
 </table>
