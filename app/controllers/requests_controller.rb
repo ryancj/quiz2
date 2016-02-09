@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
   def update
     request = Request.find params[:id]
     request.update request_params
-    redirect_to requests_path
+    redirect_to request_path(request)
   end
 
   def destroy
