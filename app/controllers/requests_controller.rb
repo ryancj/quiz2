@@ -17,16 +17,14 @@ class RequestsController < ApplicationController
   end
 
   def index
-
-    # @requests = Request.page(params[:page]).per(7)
-    @requests = Request.all
-    # @requests = Request.order(:done).page params[:page]
-
     if params[:search]
       @requests = Request.search(params[:search]).order("created_at DESC")
     else
       @requests = Request.all.order('created_at DESC')
     end
+
+    @requests = @requests.page(params[:page])
+    # @requests = Request.all
   end
 
   def edit
